@@ -1,0 +1,11 @@
+{% extends 'encyclopedia/layout.html' %}
+
+{% block title %}Entry Detail{% endblock title %}
+
+{% block body %}
+
+    <h3>Entry Details</h3>
+    {{ content|safe }}
+    <br>
+     <a href="{% url 'update_entry' title %}" class="btn btn-secondary mx-1">Update Entry</a><a href="{% url 'delete_entry' title %}" class="btn btn-danger">Delete Entry</a>
+{% endblock  %}

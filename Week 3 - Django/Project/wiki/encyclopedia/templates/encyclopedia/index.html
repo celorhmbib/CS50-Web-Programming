@@ -1,0 +1,21 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+    <h1>{{ title }}</h1>
+
+    <ul>
+        {% for entry in entries %}
+            <li><a href="{% url 'entry_page' entry %}">{{ entry }}</a></li>
+        {% endfor %}
+    </ul>
+    {% if message %}
+    <p>
+        Sorry, the entry you are looking for does not exist. You can add over <a href="{% url 'create_entry' %}">here</a>.
+    </p>
+    {% endif %}
+
+{% endblock %}

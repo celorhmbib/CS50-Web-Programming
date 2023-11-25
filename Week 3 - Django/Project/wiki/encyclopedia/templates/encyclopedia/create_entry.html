@@ -1,0 +1,20 @@
+{% extends 'encyclopedia/layout.html' %}
+
+{% block title %}Add Entry{% endblock title %}
+
+
+{% block body %}
+{% if message %}
+    <p>{{ message }}</p>
+{% endif %}
+<h4>Add Entry</h4>
+<hr>
+<br>
+<form action="" method="POST">
+    {% csrf_token %}
+    
+    {{ form.as_p }}
+    
+    <button class="btn btn-primary">Create Entry</button>
+</form>
+{% endblock body %}
